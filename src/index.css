@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@700&family=Great+Vibes&family=Inter:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@700;800&family=Oswald:wght@500;700&family=Pacifico&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@700;800&family=Roboto+Slab:wght@500;700&family=Satisfy&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom, elegant and visible scrollbar styles for dark preview areas */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.45) rgba(0, 0, 0, 0.3);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  border: 1.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* Prevent scrolling freezes, clipping, or text occlusion on narrow/short viewports 
+ * (e.g. high zoom, smaller laptops, or embedded iframe visual preview).
+ */
+@media (max-width: 1024px) or (max-height: 850px) {
+  body, 
+  div[class*="md:h-screen"], 
+  main[class*="md:h-screen"],
+  aside[class*="md:h-screen"],
+  div[class*="md:h-[calc(100vh"],
+  div[class*="md:overflow-hidden"],
+  main[class*="md:overflow-hidden"] {
+    height: auto !important;
+    min-height: fit-content !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+/* Global press animation for ALL buttons to ensure a tactile and high-fidelity experience */
+button, .pressable-button {
+  transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+button:active:not(:disabled), .pressable-button:active:not(:disabled) {
+  transform: scale(0.96) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06) !important;
+  opacity: 0.94;
+}
+
+
